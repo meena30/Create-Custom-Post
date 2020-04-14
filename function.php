@@ -1,14 +1,15 @@
-function career_init() {
+// Creates Team Member Custom Post Type
+function teammember_init() {
     $args = array(
-            'label'                => 'Career',
+            'label'                => 'TeamMember',
             'public'               => true,
             'publicly_queryable'   => true,
             'show_ui'              => true,
             'hierarchical'         => false,
             'query_var'            => true,
-            'rewrite'              => array('slug' => 'career'),
+            'rewrite'              => array('slug' => 'teammember'),
             'capability_type'      => 'post',
-            'has_archive'          => false,     
+            'has_archive'          => true,        
             'menu_icon'            => 'dashicons-video-alt',
             'supports' => array(
                     'title',
@@ -22,6 +23,6 @@ function career_init() {
                     'author',
                     'page-attributes',)
         );
-    register_post_type( 'career', $args );
+    register_post_type( 'teammember', $args );
 }
-add_action( 'init', 'career_init' );
+add_action( 'init', 'teammember_init' );
